@@ -1,0 +1,70 @@
+Problem: Language Barrier.
+Problem Statement: Develop a program to overcome language barriers by providing translation assistance.
+
+Sub-Problems:
+1. Input Collection: Gather user input to be translated.
+2. Language Translation: Translate the input text to English and the results are translated to the desired language.
+3. Output: Display the results of the search in a desired language.
+
+Sub-Solutions:
+1. Input Collection:
+•	Define a function to collect user input.
+•	Validate and sanitize the input.
+             Functions: 
+•	“collectInput()”: Collects user input to be translated.
+•	 “validateInput(inputText)”: Validates and sanitizes the user input.
+2. Language Translation:
+•	Translate the input text to English.
+•	Process and retrieve relevant results.
+•	Translate search results from English to the desired language.
+              Functions: 
+•	Translates the user input text to English: “translateToEnglish(inputText)”: 
+•	Retrieves relevant search results based on the translated English text: “retrieveSearchResults(englishText)” 
+•	Translates the search results to the desired language: “translateToDesiredLanguage(searchResults, desiredLanguage)”
+3. Output:
+•	Display the translated search results in the desired language.
+               Functions:
+•	“displayResults(translatedResults)”: Displays the translated search results to the user.
+Pseudo Code:
+# Input Collection
+function collectInput():
+    # Function to collect user input.
+    inputText = readUserInput()
+    return inputText
+
+function validateInput(inputText):
+    # Function to validate and sanitize the input.
+    if inputText is empty:
+        displayErrorMessage("Please enter text to translate.")
+        return False
+    return True
+
+# Language Translation
+function translateToEnglish(inputText):
+    # Function to translate the input text to English.
+    englishText = translationAPI.translate(inputText, "English")
+    return englishText
+
+function retrieveSearchResults(englishText):
+    # Function to process and retrieve relevant search results.
+    searchResults = searchAPI.search(englishText)
+    return searchResults
+
+function translateToDesiredLanguage(searchResults, desiredLanguage):
+    # Function to translate the search results to the desired language.
+    translatedResults = translationAPI.translate(searchResults, desiredLanguage)
+    return translatedResults
+
+# Output
+function displayResults(translatedResults):
+    # Function to display the translated search results.
+    for result in translatedResults:
+        print(result)
+```
+
+Data Types:
+•	“inputText”: string (stores the user input text)
+•	“englishText”: string (stores the translated input text in English)
+•	”searchResults”: list (stores the retrieved search results)
+•	”translatedResults”: list (stores the translated search results)
+•	”desiredLanguage”: string (stores the desired output language)
